@@ -36,6 +36,13 @@ Issues = "https://github.com/QwenLM/Qwen2-VL/issues"
 decord = [
     "decord",
 ]
+audio = [
+    "soundfile",
+]
+dev = [
+    "torch",
+    "torchvision",
+]
 
 [build-system]
 requires = ["hatchling"]
