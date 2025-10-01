@@ -3,7 +3,7 @@
 def test_fetch_audio_with_dataset():
     """Test with actual HuggingFace dataset"""
     from datasets import load_dataset
-    from qwen_vl_utils.vision_process import fetch_audio
+    from qwen_vl_utils.audio_process import fetch_audio
     
     print("\n🔍 Testing fetch_audio with real dataset...")
     
@@ -17,7 +17,7 @@ def test_fetch_audio_with_dataset():
     sample = next(iter(dataset.take(1)))
     
     # Test fetch_audio
-    audio_array, sample_rate = fetch_audio(sample["wav"])
+    audio_array, sample_rate = fetch_audio(sample["wav"], sample_rate=16000)
     
     # Verify it worked
     print(f"✓ Audio shape: {audio_array.shape}")
