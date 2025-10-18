@@ -18,7 +18,7 @@ def fetch_audio(ele: Dict[str, Any], sample_rate: int) -> Tuple[np.ndarray, int]
     import io
 
     # get audio bytes
-    audio_bytes = ele["bytes"]
+    audio_bytes = ele["wav"]["bytes"]
 
     # convert bytes to numpy array
     audio_array, sample_rate = librosa.load(io.BytesIO(audio_bytes), dtype="float32", sr=sample_rate)
